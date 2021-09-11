@@ -23,5 +23,9 @@ func TestOverall(t *testing.T) {
 		Addr: brokerAddr,
 	})
 	handy.Throw(err)
-	aBroker.Close()
+	defer aBroker.Close()
+	_, err = Dial(nil, Config{
+		Add,
+	})
+	handy.Throw(err)
 }

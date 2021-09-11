@@ -1,9 +1,6 @@
 package main
 
-import broker "github.com/itsabgr/broker-go"
-
-var config broker.Config
+import _ "github.com/itsabgr/broker-go"
 
 func main() {
-	flag
 }

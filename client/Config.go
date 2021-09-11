@@ -10,7 +10,7 @@ type Config struct {
 	ID     broker.ID
 	Params url.Values
 	//Cert, Key []byte
-	MaxMessageSize uint
+	//MaxMessageSize uint
 }
 
 //func (c *Config) hasTlsOptions() bool {

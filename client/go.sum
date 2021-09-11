@@ -1,9 +1,7 @@
-github.com/adrg/xdg v0.3.3 h1:s/tV7MdqQnzB1nKY8aqHvAMD+uCiuEDzVB5HLRY849U=
 github.com/adrg/xdg v0.3.3/go.mod h1:61xAR2VZcggl2St4O9ohF5qCKe08+JDmE4VNzPFQvOQ=
 github.com/adrg/xdg v0.3.4 h1:0BivHfQ0LSGQrFTaEZ0hyQLm/HAidci7m+1cT6wKKdA=
 github.com/adrg/xdg v0.3.4/go.mod h1:61xAR2VZcggl2St4O9ohF5qCKe08+JDmE4VNzPFQvOQ=
 github.com/andybalholm/brotli v1.0.0/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
-github.com/andybalholm/brotli v1.0.2 h1:JKnhI/XQ75uFBTiuzXpzFrUriDPiZjlOSzh6wXogP0E=
 github.com/andybalholm/brotli v1.0.2/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
 github.com/andybalholm/brotli v1.0.3 h1:fpcw+r1N1h0Poc1F/pHbW40cUm/lMEQslZtCkBQ0UnM=
 github.com/andybalholm/brotli v1.0.3/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
@@ -14,8 +12,8 @@ github.com/fasthttp/websocket v1.4.3/go.mod h1:5r4oKssgS7W6Zn6mPWap3NWzNPJNzUUh3
 github.com/golang/snappy v0.0.3/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
 github.com/itsabgr/atomic2 v0.0.0-20210818210024-bb6ff09eb799 h1:LzDYrvWyi0NGW/tsHgDIKsFgWy/DP3JQrXG7i8hmVWc=
 github.com/itsabgr/atomic2 v0.0.0-20210818210024-bb6ff09eb799/go.mod h1:A9SJqNgBSTV3EAoMd0d/o3QPjFRakbz6FQwZSTYeb14=
-github.com/itsabgr/broker-go v0.0.0-20210911190902-70adeff0e32c h1:BbzZq5ZkwixLu/slgZ4yeK52Ak7ICThFYPKMkM1cFPk=
-github.com/itsabgr/broker-go v0.0.0-20210911190902-70adeff0e32c/go.mod h1:mSrfz+gmjXc8LZHl8xpOgAOQBO1RnP1tXnYUEdjYdXU=
+github.com/itsabgr/broker-go v0.0.0-20210911200300-0bee4e664745 h1:R8TySziXcV+SXm5Q3NosEFA5rBQDAdXZr4f/BENE+LY=
+github.com/itsabgr/broker-go v0.0.0-20210911200300-0bee4e664745/go.mod h1:mSrfz+gmjXc8LZHl8xpOgAOQBO1RnP1tXnYUEdjYdXU=
 github.com/itsabgr/fastintmap v1.0.5 h1:RNcZRS6bf6leEwYvkFL8F3EmZI4gMUvLzC4wGp33pt4=
 github.com/itsabgr/fastintmap v1.0.5/go.mod h1:+KYbfvX90mW/sHUuWcJr06ER+eEdqLqcRKtps3VG46o=
 github.com/itsabgr/go-handy v0.0.0-20210823110817-5b8ca3ce7606/go.mod h1:/B0ggMYLkMBR70PwLieFK2aKpNdkyhMBCHuhz0FvY04=
@@ -27,8 +25,6 @@ github.com/klauspost/compress v1.13.5 h1:9O69jUPDcsT9fEm74W92rZL9FQY7rCdaXVneq+y
 github.com/klauspost/compress v1.13.5/go.mod h1:/3/Vjq9QcHkK5uEr5lBEmyoZ1iFhe47etQ6QUkpK6sk=
 github.com/kpango/fastime v1.0.17 h1:IZOBLEJrr2MIpsY1ihGhpkY+9pEikJWYwPEMu0/VdcY=
 github.com/kpango/fastime v1.0.17/go.mod h1:lVqUTcXmQnk1wriyvq5DElbRSRDC0XtqbXQRdz0Eo+g=
-github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2 h1:JhzVVoYvbOACxoUmOs6V/G4D5nPVUW73rKvXxP4XUJc=
-github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2/go.mod h1:iIss55rKnNBTvrwdmkUpLnDpZoAHvWaiq5+iMmen4AE=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/savsgio/gotils v0.0.0-20200608150037-a5f6f5aef16c h1:2nF5+FZ4/qp7pZVL7fR6DEaSTzuDmNaFTyqp92/hwF8=
@@ -39,7 +35,6 @@ github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 github.com/valyala/fasthttp v1.14.0/go.mod h1:ol1PCaL0dX20wC0htZ7sYCsvCYmrouYra0zHzaclZhE=
-github.com/valyala/fasthttp v1.29.0 h1:F5GKpytwFk5OhCuRh6H+d4vZAcEeNAwPTdwQnm6IERY=
 github.com/valyala/fasthttp v1.29.0/go.mod h1:2rsYD01CKFrjjsvFxx75KlEUNpWNBY9JWD3K/7o2Cus=
 github.com/valyala/fasthttp v1.30.0 h1:nBNzWrgZUUHohyLPU/jTvXdhrcaf2m5k3bWk+3Q049g=
 github.com/valyala/fasthttp v1.30.0/go.mod h1:2rsYD01CKFrjjsvFxx75KlEUNpWNBY9JWD3K/7o2Cus=

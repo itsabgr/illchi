@@ -13,10 +13,12 @@ func Dial(ctx context.Context, config Config) (Client, error) {
 		ctx = context.Background()
 	}
 	url := url.URL{
-		Scheme:   "wss",
-		Host:     config.Broker,
-		Path:     "/" + config.ID.String(),
-		RawQuery: config.Params.Encode(),
+		Scheme: "wss",
+		Host:   config.Broker,
+		Path:   "/" + config.ID.String(),
+	}
+	if config.Params != nil {
+		url.RawQuery = config.Params.Encode()
 	}
 	dialer := websocket.Dialer{
 		EnableCompression: false,
