@@ -14,7 +14,7 @@ type Config struct {
 	//MaxMessageSize uint
 }
 
-//func (c *Config) hasTlsOptions() bool {
+//func (c *Config) hasTLS() bool {
 //	return c.Cert != nil && c.Key != nil && len(c.Cert) > 0 && len(c.Key) > 0
 //}
 //
