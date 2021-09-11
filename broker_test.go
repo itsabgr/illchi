@@ -39,7 +39,7 @@ func TestOverall(t *testing.T) {
 	wg.Wait()
 	websocket.DefaultDialer.HandshakeTimeout = 1 * time.Second
 	websocket.DefaultDialer.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
-	conn, resp, err := websocket.DefaultDialer.Dial(fmt.Sprintf("wss://%s/100?foo=bad", brokerAddr), nil)
+	conn, resp, err := websocket.DefaultDialer.Dial(fmt.Sprintf("ws://%s/100?foo=bad", brokerAddr), nil)
 	if err != nil {
 		t.Log(resp)
 		t.Fatal(err)

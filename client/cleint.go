@@ -2,7 +2,6 @@ package client
 
 import (
 	"context"
-	"crypto/tls"
 	"github.com/fasthttp/websocket"
 	"github.com/valyala/fasthttp"
 	"net/url"
@@ -14,9 +13,12 @@ func Dial(ctx context.Context, config Config) (Client, error) {
 		ctx = context.Background()
 	}
 	url := url.URL{
-		Scheme: "wss",
+		Scheme: "ws",
 		Host:   config.Broker,
 		Path:   "/" + config.ID.String(),
+	}
+	if config.TLS {
+		url.Scheme = "wss"
 	}
 	if config.Params != nil {
 		url.RawQuery = config.Params.Encode()
@@ -24,9 +26,6 @@ func Dial(ctx context.Context, config Config) (Client, error) {
 	dialer := websocket.Dialer{
 		HandshakeTimeout:  2 * time.Second,
 		EnableCompression: false,
-		TLSClientConfig: &tls.Config{
-			InsecureSkipVerify: config.SkipVerifySSL,
-		},
 	}
 	//if config.hasTlsOptions() {
 	//	dialer.TLSClientConfig = config.getTlsConfig()

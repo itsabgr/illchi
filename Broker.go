@@ -27,7 +27,9 @@ func (b *brokerImpl) Listen() error {
 		return err
 	}
 	defer handy.Close(listener)
-	listener = tls.NewListener(listener, b.config.getTlsConfig())
+	if b.config.hasTLS() {
+		listener = tls.NewListener(listener, b.config.getTlsConfig())
+	}
 	return b.http.Serve(listener)
 }
 
