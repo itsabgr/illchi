@@ -27,9 +27,6 @@ func Dial(ctx context.Context, config Config) (Client, error) {
 		HandshakeTimeout:  2 * time.Second,
 		EnableCompression: false,
 	}
-	//if config.hasTlsOptions() {
-	//	dialer.TLSClientConfig = config.getTlsConfig()
-	//}
 	conn, _, err := dialer.DialContext(ctx, url.String(), nil)
 	if err != nil {
 		return nil, err

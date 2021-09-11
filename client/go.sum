@@ -14,6 +14,8 @@ github.com/itsabgr/atomic2 v0.0.0-20210818210024-bb6ff09eb799 h1:LzDYrvWyi0NGW/t
 github.com/itsabgr/atomic2 v0.0.0-20210818210024-bb6ff09eb799/go.mod h1:A9SJqNgBSTV3EAoMd0d/o3QPjFRakbz6FQwZSTYeb14=
 github.com/itsabgr/broker-go v0.0.0-20210911201216-bc0eb1cbd7b2 h1:mM3WHIVXD7pJp5TgYeql7GqNJznxzyR8Q0Mulo6s89I=
 github.com/itsabgr/broker-go v0.0.0-20210911201216-bc0eb1cbd7b2/go.mod h1:mSrfz+gmjXc8LZHl8xpOgAOQBO1RnP1tXnYUEdjYdXU=
+github.com/itsabgr/broker-go v0.0.0-20210911212048-265afbc75a3d h1:QIwTtxWC4RbrGIwqUFK6jWIMEXMo6WZD0zBkEGRMY38=
+github.com/itsabgr/broker-go v0.0.0-20210911212048-265afbc75a3d/go.mod h1:jrt2VZd2SOVZgLNFB35be01sb95vbwPR0SXpR8fvzYI=
 github.com/itsabgr/fastintmap v1.0.5 h1:RNcZRS6bf6leEwYvkFL8F3EmZI4gMUvLzC4wGp33pt4=
 github.com/itsabgr/fastintmap v1.0.5/go.mod h1:+KYbfvX90mW/sHUuWcJr06ER+eEdqLqcRKtps3VG46o=
 github.com/itsabgr/go-handy v0.0.0-20210823110817-5b8ca3ce7606/go.mod h1:/B0ggMYLkMBR70PwLieFK2aKpNdkyhMBCHuhz0FvY04=
