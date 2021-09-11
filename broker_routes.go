@@ -1,6 +1,7 @@
 package broker
 
 import (
+	"fmt"
 	"github.com/fasthttp/websocket"
 	"github.com/valyala/fasthttp"
 )
@@ -33,6 +34,7 @@ func (b *brokerImpl) routeSend(ctx *fasthttp.RequestCtx) {
 		ctx.SetConnectionClose()
 		return
 	}
+	fmt.Println("send to ", targetID)
 	targetWsConn := b.wsConnMap.Get(uintptr(targetID))
 	if targetWsConn == nil {
 		ctx.SetStatusCode(fasthttp.StatusNotFound)
@@ -66,7 +68,7 @@ func (b *brokerImpl) routeUpgrade(ctx *fasthttp.RequestCtx) {
 		ctx.SetConnectionClose()
 		return
 	}
-
+	fmt.Println("connected as", desiredID)
 	if conn := b.wsConnMap.Get(uintptr(desiredID)); conn != nil {
 		ctx.SetStatusCode(fasthttp.StatusConflict)
 		ctx.SetBodyString(ErrConflictID.Error())
