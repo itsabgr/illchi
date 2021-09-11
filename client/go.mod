@@ -6,7 +6,7 @@ require (
 	github.com/adrg/xdg v0.3.4 // indirect
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/fasthttp/websocket v1.4.3
-	github.com/itsabgr/broker-go v0.0.0-20210911215306-17d04d8d5c00 // indirect
+	github.com/itsabgr/broker-go v0.0.0-20210911215449-2a355630b146 // indirect
 	github.com/itsabgr/go-handy v0.0.0-20210902090010-6f8910d207ff
 	github.com/klauspost/compress v1.13.5 // indirect
 	github.com/rocketlaunchr/https-go v0.0.0-20200218083740-ba6c48f29f4d
