@@ -53,10 +53,11 @@ func TestOverall(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer client2.Close()
-	err = client1.Send(nil, brokerAddr, 2, []byte("hello"))
+	err = client1.Send(nil, brokerAddr, 0, []byte("hello"))
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	msg, err := client2.Receive(nil)
 	if err != nil {
 		t.Fatal(err)

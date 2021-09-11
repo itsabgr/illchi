@@ -11,8 +11,9 @@ import (
 )
 
 type client struct {
-	ws   *websocket.Conn
-	http fasthttp.Client
+	ws     *websocket.Conn
+	http   fasthttp.Client
+	config Config
 }
 
 func (c *client) Receive(_ context.Context) (msg []byte, err error) {
@@ -35,10 +36,14 @@ func (c *client) Send(_ context.Context, host string, id broker.ID, msg []byte) 
 	req := fasthttp.AcquireRequest()
 	defer fasthttp.ReleaseRequest(req)
 	url := url.URL{
-		Scheme: "https",
+		Scheme: "http",
 		Host:   host,
 		Path:   "/" + id.String(),
 	}
+	if c.config.TLS {
+		url.Scheme = "https"
+	}
+	req.Header.SetMethod(fasthttp.MethodPost)
 	req.SetRequestURI(url.String())
 	req.SetBody(msg)
 	res := fasthttp.AcquireResponse()

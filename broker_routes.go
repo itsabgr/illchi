@@ -36,7 +36,7 @@ func (b *brokerImpl) routeSend(ctx *fasthttp.RequestCtx) {
 	targetWsConn := b.wsConnMap.Get(uintptr(targetID))
 	if targetWsConn == nil {
 		ctx.SetStatusCode(fasthttp.StatusNotFound)
-		ctx.SetBodyString(err.Error())
+		ctx.SetBodyString("Not Found")
 		ctx.SetConnectionClose()
 		return
 	}

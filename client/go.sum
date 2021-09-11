@@ -16,6 +16,8 @@ github.com/itsabgr/broker-go v0.0.0-20210911201216-bc0eb1cbd7b2 h1:mM3WHIVXD7pJp
 github.com/itsabgr/broker-go v0.0.0-20210911201216-bc0eb1cbd7b2/go.mod h1:mSrfz+gmjXc8LZHl8xpOgAOQBO1RnP1tXnYUEdjYdXU=
 github.com/itsabgr/broker-go v0.0.0-20210911212048-265afbc75a3d h1:QIwTtxWC4RbrGIwqUFK6jWIMEXMo6WZD0zBkEGRMY38=
 github.com/itsabgr/broker-go v0.0.0-20210911212048-265afbc75a3d/go.mod h1:jrt2VZd2SOVZgLNFB35be01sb95vbwPR0SXpR8fvzYI=
+github.com/itsabgr/broker-go v0.0.0-20210911214443-2d46d7f2eeca h1:/9ijVfaYCkrZp3CWTO3dB8ihcYsQvAm0g0iZqYrQs9s=
+github.com/itsabgr/broker-go v0.0.0-20210911214443-2d46d7f2eeca/go.mod h1:AZ5CwS0jBsT/K2FMeUiQCpKC8/ZlX/azBf7E6RX9iuw=
 github.com/itsabgr/fastintmap v1.0.5 h1:RNcZRS6bf6leEwYvkFL8F3EmZI4gMUvLzC4wGp33pt4=
 github.com/itsabgr/fastintmap v1.0.5/go.mod h1:+KYbfvX90mW/sHUuWcJr06ER+eEdqLqcRKtps3VG46o=
 github.com/itsabgr/go-handy v0.0.0-20210823110817-5b8ca3ce7606/go.mod h1:/B0ggMYLkMBR70PwLieFK2aKpNdkyhMBCHuhz0FvY04=

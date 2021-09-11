@@ -33,7 +33,8 @@ func Dial(ctx context.Context, config Config) (Client, error) {
 	}
 
 	cli := &client{
-		ws: conn,
+		config: config,
+		ws:     conn,
 		http: fasthttp.Client{
 			Name:                "go-client/0.1.0",
 			MaxConnsPerHost:     1,
