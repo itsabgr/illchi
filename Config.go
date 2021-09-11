@@ -3,6 +3,7 @@ package broker
 import (
 	"crypto/tls"
 	"github.com/itsabgr/go-handy"
+	"github.com/rocketlaunchr/https-go"
 )
 
 type Config struct {
@@ -14,11 +15,14 @@ type Config struct {
 	//MaxMessageSize uint
 }
 
-func (c *Config) hasTlsOptions() bool {
-	return c.Cert != nil && c.Key != nil && len(c.Cert) > 0 && len(c.Key) > 0
-}
-
 func (c *Config) getTlsConfig() *tls.Config {
+	if c.Key == nil && c.Cert == nil {
+		var err error
+		c.Cert, c.Key, err = https.GenerateKeys(https.GenerateOptions{
+			Host: c.Origin,
+		})
+		handy.Throw(err)
+	}
 	cert, err := tls.X509KeyPair(c.Cert, c.Key)
 	handy.Throw(err)
 	return &tls.Config{

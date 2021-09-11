@@ -27,15 +27,13 @@ func (b *brokerImpl) Listen() error {
 		return err
 	}
 	defer handy.Close(listener)
-	if b.config.hasTlsOptions() {
-		listener = tls.NewListener(listener, b.config.getTlsConfig())
-	}
+	listener = tls.NewListener(listener, b.config.getTlsConfig())
 	return b.http.Serve(listener)
 }
 
 func (b *brokerImpl) Stat() *Statics {
 	stat := poolStructStatics.Get().(*Statics)
-	stat.UpTime = int32(b.startTime - fastime.UnixNow())
+	stat.UpTime = int32(fastime.UnixNow() - b.startTime)
 	stat.Connections = b.http.GetOpenConnectionsCount()
 	return stat
 }

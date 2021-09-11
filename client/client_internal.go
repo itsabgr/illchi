@@ -15,7 +15,7 @@ type client struct {
 	http fasthttp.Client
 }
 
-func (c client) Receive(_ context.Context) (msg []byte, err error) {
+func (c *client) Receive(_ context.Context) (msg []byte, err error) {
 begin:
 	kind, msg, err := c.ws.ReadMessage()
 	if err != nil {
@@ -31,7 +31,7 @@ begin:
 	return msg, nil
 }
 
-func (c client) Send(_ context.Context, host string, id broker.ID, msg []byte) error {
+func (c *client) Send(_ context.Context, host string, id broker.ID, msg []byte) error {
 	req := fasthttp.AcquireRequest()
 	defer fasthttp.ReleaseRequest(req)
 	url := url.URL{
@@ -54,6 +54,6 @@ func (c client) Send(_ context.Context, host string, id broker.ID, msg []byte) e
 	return errors.New(string(res.Body()))
 }
 
-func (c client) Close() error {
-	panic("implement me")
+func (c *client) Close() error {
+	return c.ws.Close()
 }

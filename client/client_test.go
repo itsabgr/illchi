@@ -1,9 +1,11 @@
 package client
 
 import (
+	"fmt"
 	"github.com/itsabgr/broker-go"
 	"github.com/itsabgr/go-handy"
 	"net"
+	"sync"
 	"testing"
 )
 
@@ -22,10 +24,42 @@ func TestOverall(t *testing.T) {
 	aBroker, err := broker.New(broker.Config{
 		Addr: brokerAddr,
 	})
-	handy.Throw(err)
+	if err != nil {
+		t.Fatal(err)
+	}
 	defer aBroker.Close()
-	_, err = Dial(nil, Config{
-		Add,
+	wg := &sync.WaitGroup{}
+	wg.Add(1)
+	go func() {
+		wg.Done()
+		handy.Throw(aBroker.Listen())
+	}()
+	wg.Wait()
+	fmt.Printf("listen %s\n", brokerAddr)
+	client1, err := Dial(nil, Config{
+		Broker: brokerAddr,
+		ID:     1,
 	})
-	handy.Throw(err)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer client1.Close()
+	client2, err := Dial(nil, Config{
+		Broker: brokerAddr,
+		ID:     2,
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer client2.Close()
+	err = client1.Send(nil, brokerAddr, 2, []byte("hello"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	msg, err := client2.Receive(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	fmt.Println(msg)
+
 }

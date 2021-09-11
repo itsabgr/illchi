@@ -6,9 +6,10 @@ import (
 )
 
 type Config struct {
-	Broker string
-	ID     broker.ID
-	Params url.Values
+	Broker        string
+	ID            broker.ID
+	Params        url.Values
+	SkipVerifySSL bool
 	//Cert, Key []byte
 	//MaxMessageSize uint
 }

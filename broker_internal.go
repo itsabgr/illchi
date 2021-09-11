@@ -2,8 +2,8 @@ package broker
 
 import (
 	"github.com/fasthttp/websocket"
+	"github.com/kpango/fastime"
 	"github.com/valyala/fasthttp"
-	"time"
 )
 
 type brokerImpl struct {
@@ -19,7 +19,7 @@ func (b *brokerImpl) init() {
 	if len(b.config.Origin) == 0 {
 		b.config.Origin = "*"
 	}
-	b.startTime = time.Now().UTC().Unix()
+	b.startTime = fastime.UnixNow()
 }
 func (b *brokerImpl) authenticate(ctx *fasthttp.RequestCtx) error {
 	if b.config.Authenticator == nil {
