@@ -6,12 +6,12 @@ import (
 )
 
 type Config struct {
-	Addr           string
-	Origin         string
-	Authenticator  Authenticator
-	Cert, Key      []byte
-	StartTime      int64
-	MaxMessageSize uint
+	Addr          string
+	Origin        string
+	Authenticator Authenticator
+	Cert, Key     []byte
+	//StartTime      int64
+	//MaxMessageSize uint
 }
 
 func (c *Config) hasTlsOptions() bool {

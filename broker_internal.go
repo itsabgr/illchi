@@ -3,6 +3,7 @@ package broker
 import (
 	"github.com/fasthttp/websocket"
 	"github.com/valyala/fasthttp"
+	"time"
 )
 
 type brokerImpl struct {
@@ -10,10 +11,15 @@ type brokerImpl struct {
 	config    Config
 	wsConnMap webSocketMap
 	upgrader  websocket.FastHTTPUpgrader
+	startTime int64
 }
 
 func (b *brokerImpl) init() {
 	b.http.Handler = b.httpHandler
+	if len(b.config.Origin) == 0 {
+		b.config.Origin = "*"
+	}
+	b.startTime = time.Now().UTC().Unix()
 }
 func (b *brokerImpl) authenticate(ctx *fasthttp.RequestCtx) error {
 	if b.config.Authenticator == nil {

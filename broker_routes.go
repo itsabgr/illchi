@@ -3,7 +3,6 @@ package broker
 import (
 	"github.com/fasthttp/websocket"
 	"github.com/valyala/fasthttp"
-	"io"
 )
 
 func (b *brokerImpl) routeCORS(ctx *fasthttp.RequestCtx) {
@@ -21,12 +20,12 @@ func (b *brokerImpl) routeSend(ctx *fasthttp.RequestCtx) {
 		ctx.SetConnectionClose()
 		return
 	}
-	if uint(messageLength) > b.config.MaxMessageSize {
-		ctx.SetStatusCode(fasthttp.StatusRequestEntityTooLarge)
-		ctx.SetBodyString(fasthttp.ErrBodyTooLarge.Error())
-		ctx.SetConnectionClose()
-		return
-	}
+	//if uint(messageLength) > b.config.MaxMessageSize {
+	//	ctx.SetStatusCode(fasthttp.StatusRequestEntityTooLarge)
+	//	ctx.SetBodyString(fasthttp.ErrBodyTooLarge.Error())
+	//	ctx.SetConnectionClose()
+	//	return
+	//}
 	targetID, err := parseIDFromHttpRequest(ctx)
 	if err != nil {
 		ctx.SetStatusCode(fasthttp.StatusBadRequest)
@@ -48,24 +47,10 @@ func (b *brokerImpl) routeSend(ctx *fasthttp.RequestCtx) {
 		ctx.SetConnectionClose()
 		return
 	}
-	bodyBuffer := newBufferSize(messageLength)
-	err = ctx.Request.BodyWriteTo(bodyBuffer)
+	body := ctx.Request.Body()
+	err = targetWsConn.WriteMessage(websocket.BinaryMessage, body)
 	if err != nil {
-		ctx.SetStatusCode(fasthttp.StatusBadRequest)
-		ctx.SetBodyString(err.Error())
-		ctx.SetConnectionClose()
-		return
-	}
-	writer, err := targetWsConn.NextWriter(websocket.BinaryMessage)
-	if err != nil {
-		ctx.SetStatusCode(fasthttp.StatusBadRequest)
-		ctx.SetBodyString(err.Error())
-		ctx.SetConnectionClose()
-		return
-	}
-	_, err = io.Copy(writer, bodyBuffer)
-	if err != nil {
-		ctx.SetStatusCode(fasthttp.StatusBadRequest)
+		ctx.SetStatusCode(fasthttp.StatusBadGateway)
 		ctx.SetBodyString(err.Error())
 		ctx.SetConnectionClose()
 		return

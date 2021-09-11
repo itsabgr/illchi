@@ -35,7 +35,7 @@ func (b *brokerImpl) Listen() error {
 
 func (b *brokerImpl) Stat() *Statics {
 	stat := poolStructStatics.Get().(*Statics)
-	stat.UpTime = int32(b.config.StartTime - fastime.UnixNow())
+	stat.UpTime = int32(b.startTime - fastime.UnixNow())
 	stat.Connections = b.http.GetOpenConnectionsCount()
 	return stat
 }

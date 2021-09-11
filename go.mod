@@ -1,4 +1,4 @@
-module github.com/itsabgr/ilam
+module github.com/itsabgr/broker-go
 
 go 1.16
 
