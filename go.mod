@@ -1,4 +1,4 @@
-module github.com/itsabgr/broker-go
+module github.com/itsabgr/illchi
 
 go 1.16
 
