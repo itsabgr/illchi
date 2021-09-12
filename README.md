@@ -11,3 +11,4 @@ Federated message broker
 - Docs
 - Cmd
 - Persistence 
+- IP and score in stats
