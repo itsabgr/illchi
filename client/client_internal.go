@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/fasthttp/websocket"
-	"github.com/itsabgr/broker-go"
+	"github.com/itsabgr/illchi"
 	"github.com/valyala/fasthttp"
 	"net/url"
 	"os"
