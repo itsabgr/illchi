@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/itsabgr/broker-go"
+	"github.com/itsabgr/illchi"
 )
 
 func main() {
