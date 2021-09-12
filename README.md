@@ -8,5 +8,6 @@ Federated message broker
 
 #### TODO
 
+- Docs
 - Cmd
 - Persistence 
