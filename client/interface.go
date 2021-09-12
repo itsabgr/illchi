@@ -2,7 +2,7 @@ package client
 
 import (
 	"context"
-	"github.com/itsabgr/broker-go"
+	"github.com/itsabgr/illchi"
 )
 
 type Client interface {
