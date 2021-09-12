@@ -2,7 +2,7 @@ package client
 
 import (
 	"fmt"
-	"github.com/itsabgr/broker-go"
+	"github.com/itsabgr/illchi"
 	"github.com/itsabgr/go-handy"
 	"net"
 	"sync"
