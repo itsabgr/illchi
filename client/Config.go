@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/itsabgr/broker-go"
+	"github.com/itsabgr/illchi"
 	"net/url"
 )
 
