@@ -1,5 +1,5 @@
 
-### Moved to [github.com/illchi](github.com/illchi)
+### Moved to [github.com/illchi](https://github.com/illchi)
 
 # illchi
 
